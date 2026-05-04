@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register - Bank of Clothes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>Create Account</h2>
+
+    <form id="registerForm">
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <input type="password" placeholder="Confirm Password" required>
+
+        <button type="submit">Register</button>
+    </form>
+</div>
+
+<script>
+document.getElementById("registerForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let inputs = document.querySelectorAll("input");
+    let password = inputs[2].value;
+    let confirmPassword = inputs[3].value;
+
+    if(password !== confirmPassword){
+        alert("Passwords do not match!");
+    } else {
+        alert("Account created successfully!");
+    }
+});
+</script>
+
+</body>
+</html>
